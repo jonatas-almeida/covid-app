@@ -1,0 +1,23 @@
+<div class="covid-country-container">
+  <div class="covid-country-wrapper">
+    <div class="covid-country-content">
+      <div class="covid-country-info">
+        <form class="search-country-form">
+          <label>Pesquisar país:</label>
+          <input type="text" placeholder="Digite o nome do país" [(ngModel)]="buscarPaises" name="buscarPaises"/>
+          <button class="btn-buscar-pais" (click)="getCountryData()">Buscar</button>
+        </form>
+        <div class="search-country-info" *ngFor="let pais of countryData.data">
+          <h1>País: {{pais.country}}</h1>
+        </div>
+      </div>
+      <div class="covid-country-card" *ngFor="let data of covidCountryData.data">
+        <h1>{{data.country}}</h1>
+        <p>Casos: {{data.cases}}</p>
+        <p>Confirmados: {{data.confirmed}}</p>
+        <p>Mortes: {{data.deaths}}</p>
+        <p>Recuperados: {{data.recovered}}</p>
+      </div>
+    </div>
+  </div>
+</div>

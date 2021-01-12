@@ -11,11 +11,21 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
+
+
   getAllData():Observable<any>{
     return this.http.get<any>(`${this.baseUrl}report/v1`);
   }
 
   getEstadoData(estado:string):Observable<any>{
-    return this.http.get<any>(`${this.baseUrl}/report/v1/brazil/uf/${estado}`);
+    return this.http.get<any>(`${this.baseUrl}report/v1/brazil/uf/${estado}`);
+  }
+
+  getAllPaisesData():Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}report/v1/countries`);
+  }
+
+  getPaisData(pais: string):Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}report/v1/${pais}`);
   }
 }
