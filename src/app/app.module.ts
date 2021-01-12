@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './views/home/home.component';
 import { CovidDataComponent } from './components/covid-data/covid-data.component';
 import { DataService } from './services/data.service';
+import { CovidCountryDataComponent } from './components/covid-country-data/covid-country-data.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CovidDataComponent
+    CovidDataComponent,
+    CovidCountryDataComponent
   ],
   imports: [
     BrowserModule,
