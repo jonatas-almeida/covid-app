@@ -1,23 +1,26 @@
 <div class="covid-data-container">
     <div class="covid-data-wrapper">
+      <h1 class="app-title">Covid App</h1>
         <div class="covid-data-content">
             <div class="covid-state-card">
-                <form>
-                    <label>Pesquisar estado:</label>
+                <form class="search-form">
+                    <label>Pesquisar Estado:</label>
                     <input type="text" placeholder="Sigla do seu estado, Ex.: PE, SP..." [(ngModel)]="buscaEstado" name="buscarEstado">
                     <button class="btn-buscar" (click)="buscarEstadoData()">Buscar</button>
                 </form>
                 <div class="covid-state-card-info">
-                    <h1>{{covidData.state}}</h1>
-                    <h3>{{covidData.uf}}</h3>
-                    <p>Casos confirmados: {{covidData.cases}}</p>
-                    <p>Mortes por COVID-19: {{covidData.deaths}}</p>
+                    <h1><span class="card-info-nome">Estado:</span> {{buscaData.state}}</h1>
+                    <p><span class="card-info-nome">Casos suspeitos:</span> {{buscaData.suspects | number}}</p>
+                    <p><span class="card-info-nome">Casos confirmados:</span> {{buscaData.cases | number}}</p>
+                    <p><span class="card-info-nome">Mortes por COVID-19:</span> {{buscaData.deaths | number}}</p>
                 </div>
             </div>
-            <div class="covid-card" *ngFor="let data of covidData.data"><!--Acessa um objeto com o array "data"-->
+            <div class="covid-card-wrapper">
+              <div class="covid-card" *ngFor="let data of covidData.data"><!--Acessa um objeto com o array "data"-->
                 <h1>{{data.state}}, {{data.uf}}</h1>
-                <p>Casos confirmados: {{data.cases}}</p>
-                <p>Mortes por COVID-19: {{data.deaths}}</p>
+                <p><span class="confirm-cases">Casos confirmados:</span> {{data.cases |number}}</p>
+                <p><span class="death-cases">Mortes por COVID-19:</span> {{data.deaths | number}}</p>
+              </div>
             </div>
         </div>
     </div>
