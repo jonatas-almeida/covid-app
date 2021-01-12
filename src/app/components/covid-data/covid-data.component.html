@@ -1,0 +1,24 @@
+<div class="covid-data-container">
+    <div class="covid-data-wrapper">
+        <div class="covid-data-content">
+            <div class="covid-state-card">
+                <form>
+                    <label>Pesquisar estado:</label>
+                    <input type="text" placeholder="Sigla do seu estado, Ex.: PE, SP..." [(ngModel)]="buscaEstado" name="buscarEstado">
+                    <button class="btn-buscar" (click)="buscarEstadoData()">Buscar</button>
+                </form>
+                <div class="covid-state-card-info">
+                    <h1>{{covidData.state}}</h1>
+                    <h3>{{covidData.uf}}</h3>
+                    <p>Casos confirmados: {{covidData.cases}}</p>
+                    <p>Mortes por COVID-19: {{covidData.deaths}}</p>
+                </div>
+            </div>
+            <div class="covid-card" *ngFor="let data of covidData.data"><!--Acessa um objeto com o array "data"-->
+                <h1>{{data.state}}, {{data.uf}}</h1>
+                <p>Casos confirmados: {{data.cases}}</p>
+                <p>Mortes por COVID-19: {{data.deaths}}</p>
+            </div>
+        </div>
+    </div>
+</div>
