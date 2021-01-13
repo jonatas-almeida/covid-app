@@ -7,9 +7,14 @@
           <label>Pesquisar país:</label>
           <input type="text" placeholder="Digite o nome do país" [(ngModel)]="buscarPaises" name="buscarPaises"/>
           <button class="btn-buscar-pais" (click)="getCountryData()">Buscar</button>
+          <p><span class="highlight">Último país buscado: </span>{{lastCountry}}</p>
         </form>
-        <div class="search-country-info" *ngFor="let pais of countryData.data">
-          <h1>País: {{pais.country}}</h1>
+        <div class="search-country-info">
+          <h1><span class="highlight">País:</span> {{countryData.country}}</h1>
+          <p><span class="highlight">Casos: </span>{{countryData.cases | number}}</p>
+          <p><span class="highlight">Confirmados: </span>{{countryData.confirmed | number}}</p>
+          <p><span class="highlight">Recuperados:</span>{{countryData.recovered | number}}</p>
+          <p><span class="highlight">Mortes: </span>{{countryData.deaths | number}}</p>
         </div>
       </div>
       <div class="covid-country-card-wrapper">

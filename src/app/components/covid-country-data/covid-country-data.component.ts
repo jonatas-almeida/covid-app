@@ -11,11 +11,13 @@ export class CovidCountryDataComponent implements OnInit {
   covidCountryData: any = [];
   countryData: any = [];
   buscarPaises: string;
+  lastCountry: string;
 
   constructor(private dataService: DataService) { }
 
   ngOnInit(){
     this.getCountriesData();
+    this.refreshPage();
   }
 
 
@@ -33,9 +35,22 @@ export class CovidCountryDataComponent implements OnInit {
   getCountryData(){
     this.dataService.getPaisData(this.buscarPaises).subscribe(
       (response) => {
-        this.countryData = response;
+        this.countryData = response.data;
+        this.salvarPais();
       }
     )
+  }
+
+  //Manter os dados quando carregar a página
+  refreshPage(){
+    this.buscarPaises = localStorage.getItem('país');
+    this.getCountryData();
+  }
+
+  //Salvar estado digitado no localStorage
+  salvarPais(){
+    localStorage.setItem('país', this.buscarPaises);
+    this.lastCountry = localStorage.getItem('país');
   }
 
 
