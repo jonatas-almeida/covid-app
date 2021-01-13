@@ -9,13 +9,15 @@ import { HomeComponent } from './views/home/home.component';
 import { CovidDataComponent } from './components/covid-data/covid-data.component';
 import { DataService } from './services/data.service';
 import { CovidCountryDataComponent } from './components/covid-country-data/covid-country-data.component';
+import { CovidCareComponent } from './components/covid-care/covid-care.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CovidDataComponent,
-    CovidCountryDataComponent
+    CovidCountryDataComponent,
+    CovidCareComponent
   ],
   imports: [
     BrowserModule,
