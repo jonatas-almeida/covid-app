@@ -7,6 +7,7 @@
                     <label>Pesquisar Estado:</label>
                     <input type="text" placeholder="Sigla do seu estado, Ex.: PE, SP..." [(ngModel)]="buscaEstado" name="buscarEstado">
                     <button class="btn-buscar" (click)="buscarEstadoData()">Buscar</button>
+                    <p>Último estado buscado: {{lastState}}</p>
                 </form>
                 <div class="covid-state-card-info">
                     <h1><span class="card-info-nome">Estado:</span> {{buscaData.state}}</h1>

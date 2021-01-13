@@ -11,11 +11,13 @@ export class CovidDataComponent implements OnInit {
   covidData: any = [];
   buscaData: any = [];
   buscaEstado: string;
+  lastState: string;
 
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
     this.getCovidData();
+    this.refreshPage();
   }
 
 
@@ -34,8 +36,21 @@ export class CovidDataComponent implements OnInit {
       response => {
         this.buscaData = response;
         this.getCovidData();
+        this.salvarEstado();
       }
     )
+  }
+
+  //Pega os dados salvos no localStorage e exibe as informações
+  refreshPage(){
+    this.buscaEstado = localStorage.getItem('estado');
+    this.buscarEstadoData();
+  }
+
+  //Salva o estado que foi digitado no localStorage
+  salvarEstado(){
+    localStorage.setItem('estado', this.buscaEstado);
+    this.lastState = localStorage.getItem('estado');
   }
 
 }

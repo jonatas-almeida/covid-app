@@ -67,6 +67,7 @@
     font-size: 12pt;
     margin: 20px 0px;
     outline: none;
+    text-transform: capitalize;
 }
 
 .subject{
@@ -94,5 +95,30 @@
     transform: scale(0.9);
 }
 
+.covid-country-info{
+    display: flex;
+    align-items: center;
+    margin: 30px 0px;
+    padding: 30px;
+    background: #3a3a3a;
+    border-radius: 10px;
+}
+
+.search-country-info{
+    margin-left: 50px;
+}
+
+.highlight{
+    color: #00ff95;
+    font-weight: bold;
+}
+
+.search-country-info h1{
+    font-size: 24pt;
+}
+
+.search-country-info p{
+    margin: 10px 0px;
+}
 
 
