@@ -1,0 +1,98 @@
+.app-title{
+    font-size: 30pt;
+    color: #00ff95;
+    margin: 50px 0px;
+  }
+
+.covid-country-wrapper{
+    width: 960px;
+    margin: 0 auto;
+}
+
+.covid-country-card-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.covid-country-card{
+    width: 300px;
+    height: 250px;
+    padding: 30px;
+    background: #3a3a3a;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    margin: 20px 0px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    transition: all .3s;
+}
+
+.covid-country-card:hover{
+    transform: scale(1.1);
+}
+
+.covid-country-card{
+    font-size: 12pt;
+}
+
+.covid-country-card h1{
+    margin-bottom: 30px;
+    color: #00ff95;
+}
+
+.covid-country-card p{
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.search-country-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.search-country-form label{
+    font-weight: bold;
+    font-size: 18pt;
+    color: #00ff95;
+}
+
+.search-country-form input{
+    width: 350px;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 12pt;
+    margin: 20px 0px;
+    outline: none;
+}
+
+.subject{
+    font-weight: bold;
+    color: #00ff95;
+}
+
+.btn-buscar-pais{
+    width: 200px;
+    margin-bottom: 50px;
+    padding: 15px;
+    font-size: 12pt;
+    font-weight: bold;
+    color: #222;
+    border: none;
+    border-radius: 5px;
+    transition: all .3s;
+    background: #00ff95;
+    outline: none;
+    cursor: pointer;
+}
+
+
+.btn-buscar-pais:active{
+    transform: scale(0.9);
+}
+
+
+

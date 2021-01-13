@@ -1,6 +1,7 @@
 <div class="covid-country-container">
   <div class="covid-country-wrapper">
     <div class="covid-country-content">
+      <h1 class="app-title">Covid App</h1>
       <div class="covid-country-info">
         <form class="search-country-form">
           <label>Pesquisar país:</label>
@@ -11,12 +12,14 @@
           <h1>País: {{pais.country}}</h1>
         </div>
       </div>
-      <div class="covid-country-card" *ngFor="let data of covidCountryData.data">
-        <h1>{{data.country}}</h1>
-        <p>Casos: {{data.cases}}</p>
-        <p>Confirmados: {{data.confirmed}}</p>
-        <p>Mortes: {{data.deaths}}</p>
-        <p>Recuperados: {{data.recovered}}</p>
+      <div class="covid-country-card-wrapper">
+        <div class="covid-country-card" *ngFor="let data of covidCountryData.data">
+          <h1>{{data.country}}</h1>
+          <p><span class="subject">Casos:</span> {{data.cases}}</p>
+          <p><span class="subject">Confirmados:</span> {{data.confirmed}}</p>
+          <p><span class="subject">Mortes:</span> {{data.deaths}}</p>
+          <p><span class="subject">Recuperados:</span> {{data.recovered}}</p>
+        </div>
       </div>
     </div>
   </div>
