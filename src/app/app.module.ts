@@ -10,6 +10,7 @@ import { CovidDataComponent } from './components/covid-data/covid-data.component
 import { DataService } from './services/data.service';
 import { CovidCountryDataComponent } from './components/covid-country-data/covid-country-data.component';
 import { CovidCareComponent } from './components/covid-care/covid-care.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CovidCareComponent } from './components/covid-care/covid-care.component
     HomeComponent,
     CovidDataComponent,
     CovidCountryDataComponent,
-    CovidCareComponent
+    CovidCareComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
